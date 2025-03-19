@@ -414,6 +414,7 @@ const Hero = () => {
                 src={moonpupHero} 
                 alt="MoonPup Hero" 
                 className="w-full max-w-md mx-auto pulse-glow hero-image-border"
+                style={{ marginTop: '150px', marginLeft: '60px' }}
               />
             </motion.div>
             
