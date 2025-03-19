@@ -2,6 +2,11 @@
  * Font loader utility to handle font loading issues gracefully
  */
 
+// Import fonts directly as assets
+import revampedFont from '../assets/fonts/Revamped/Revamped-X3q1a.ttf';
+import nuixyberGlowFont from '../assets/fonts/Nuixyber Glow/NuixyberGlow-x3KP8.ttf';
+import nuixyberGlowNextFont from '../assets/fonts/Nuixyber Glow/NuixyberGlowNext-3zWjZ.ttf';
+
 // Function to check if a font is loaded and available
 export const checkFontLoaded = (fontFamily) => {
   return new Promise((resolve) => {
@@ -143,4 +148,50 @@ export const handleFontFallbacks = async () => {
   }
 };
 
-export default handleFontFallbacks; 
+// Create font-face stylesheet 
+const createFontFaces = () => {
+  const fontFaceStyles = document.createElement('style');
+  fontFaceStyles.textContent = `
+    @font-face {
+      font-family: 'Revamped';
+      src: url('${revampedFont}') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'NuixyberGlow';
+      src: url('${nuixyberGlowFont}') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'NuixyberGlowNext';
+      src: url('${nuixyberGlowNextFont}') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  `;
+  document.head.appendChild(fontFaceStyles);
+};
+
+// Load custom fonts
+export const loadFonts = () => {
+  try {
+    createFontFaces();
+    console.log('Custom fonts loaded successfully!');
+  } catch (error) {
+    console.error('Error loading custom fonts:', error);
+    
+    // Apply fallback fonts if needed
+    document.documentElement.style.setProperty('--font-revamped', 'Arial, sans-serif');
+    document.documentElement.style.setProperty('--font-nuixybeglow', 'Arial, sans-serif');
+    document.documentElement.style.setProperty('--font-nuixybeglow-next', 'Arial, sans-serif');
+  }
+};
+
+export default loadFonts; 

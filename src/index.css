@@ -2,31 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Fonts */
-@font-face {
-  font-family: 'Revamped';
-  src: url('/src/assets/fonts/Revamped/Revamped-X3q1a.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'NuixyberGlow';
-  src: url('/src/assets/fonts/Nuixyber Glow/NuixyberGlow-x3KP8.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'NuixyberGlowNext';
-  src: url('/src/assets/fonts/Nuixyber Glow/NuixyberGlowNext-3zWjZ.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* Fallback fonts */
 @font-face {
   font-family: 'CustomFallback';
