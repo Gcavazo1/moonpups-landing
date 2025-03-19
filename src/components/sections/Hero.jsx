@@ -50,7 +50,7 @@ const Hero = () => {
       alt: 'MoonPup Astronaut',
       style: {
         position: 'absolute',
-        bottom: '50%',
+        bottom: '40%',
         left: '24%',
         width: '480px',
         height: '480px',
